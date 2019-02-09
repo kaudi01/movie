@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>Movie directory</title>
+		<!-- CSS file -->
+    <!--bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+     integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+		<link rel = "stylesheet" type = "text/css" href = "index.css">
+	</head>
+	<body>
+		<div class = "screenSize">
+			<div class = "titleBar col-12">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+					  <a class="navbar-brand" href="#">Movie Directory</a>
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+
+					  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					    <ul class="navbar-nav mr-auto">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="#">Link</a>
+					      </li>
+					      <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Dropdown
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					          <a class="dropdown-item" href="#">Action</a>
+					          <a class="dropdown-item" href="#">Another action</a>
+					          <div class="dropdown-divider"></div>
+					          <a class="dropdown-item" href="#">Something else here</a>
+					        </div>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link disabled" href="#">Disabled</a>
+					      </li>
+					    </ul>
+					    <form class="form-inline my-2 my-lg-0">
+					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					    </form>
+					  </div>
+				</nav>
+				<div class = "wiki col-12">
+					<div class = "search col-12">
+						<div class = "id">
+							<div>Movie id		:</div>
+							<input class = "searchById" type="search" placeholder="Imdb Id" aria-label="Search">
+						</div>
+						<div class = "title">
+							<div>Movie name	:</div>
+							<input class = "searchByTitle" type="text" placeholder="Title" aria-label="Search">
+						</div>
+						<div class = "year">
+							<div>Release Year		:</div>
+							<input class = "searchByYear" type="search" placeholder="Year" aria-label="Search">
+						</div>
+						<div class = "subProg">
+							<button class = "sub" type="submit">Search</button>
+							<button class = "subAdv" type="submit">Advance Search</button>
+						</div>
+
+					</div>
+					<div class = "loader"> </div>
+					<div class = "contentImg col-12 col-lg-5 col-xl-3">
+								<div class = "image"></div>
+						</div>
+					<div class = "content col-12 col-lg-7 col-xl-3">
+								<p class = "textSize" id = "title">Title: - <span class = "textLook" id = "titleValue"></span></p>
+								<p class = "textSize" id = "year">Year: -<span class = "textLook" id = "yearValue"></span></p>
+								<p class = "textSize" id = "type">Type: -<span class = "textLook" id = "typeValue"></span></p>
+								<p class = "textSize" id = "runtime">Runtime: -<span class = "textLook" id = "runtimeValue"></span></p>
+								<p class = "textSize" id = "released">Released: -<span class = "textLook" id = "releasedValue"></span></p>
+								<p class = "textSize" id = "dvd">DVD Date: -<span class = "textLook" id = "dvdValue"></span></p>
+								<p class = "textSize" id = "genre">Genre: -<span class = "textLook" id = "genreValue"></span></p>
+								<p class = "textSize" id = "language">Language: -<span class = "textLook" id = "languageValue"></span></p>
+						</div>
+					<div class = "contentBar col-12 col-lg-12 col-xl-6">
+							<div class="accordion" id="accordionExample">
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h5 class="mb-0">
+										<button class="btn btn-link castingClass" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Casting
+										</button>
+									</h5>
+								</div>
+
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+									<div class="card-body">
+										<p class = "textSize" id = "director">Director: -<span class = "textLook" id = "directorValue"></span></p>
+										<p class = "textSize" id = "writer">Writer: -<span class = "textLook" id = "writerValue"></span></p>
+										<p class = "textSize" id = "actor">Actors: -<span class = "textLook" id = "actorValue"></span></p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed ratingsClass" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											Ratings
+										</button>
+									</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+									<div class="card-body">
+										<p class = "textSize" id = "rated">Rated: -<span class = "textLook" id = "ratedValue"></span></p>
+										<p class = "textSize" id = "ratings">Ratings: -<span class = "textLook" id = "ratingsValue"></span></p>
+										<p class = "textSize" id = "metascore">Metascore: -<span class = "textLook" id = "metascoreValue"></span></p>
+										<p class = "textSize" id = "imdbrating">imdbRating: -<span class = "textLook" id = "imdbratingValue"></span></p>
+										<p class = "textSize" id = "imdbvotes">imdbVotes: -<span class = "textLook" id = "imdbvotesValue"></span></p>
+										<p class = "textSize" id = "imdbid">imdbID: -<span class = "textLook" id = "imdbidValue"></span></p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed moreClass" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											More
+										</button>
+									</h5>
+								</div>
+								<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+									<div class="card-body">
+										<p class = "textSize" id = "plot">Plot: -<span class = "textLook" id = "plotValue"></span></p>
+										<p class = "textSize" id = "boxoffice">BoxOffice: -<span class = "textLook" id = "boxofficeValue"></span></p>
+										<p class = "textSize" id = "production">Production: -<span class = "textLook" id = "productionValue"></span></p>
+										<p class = "textSize" id = "website">Website: -<span class = "textLook" id = "websiteValue"></span></p>
+										<p class = "textSize" id = "country">Country: -<span class = "textLook" id = "countryValue"></span></p>
+										<p class = "textSize" id = "award">Awards: -<span class = "textLook" id = "awardValue"></span></p>
+									</div>
+								</div>
+							</div>
+							</div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Modal-->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalCenterTitle">Message</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+    <!--jQuery minified version-->
+    <script type="text/javascript" src = "jQuery-min-v3.3.1.js"></script>
+		<script type="text/javascript" src = "index.js"></script>
+    <!--bootstrap script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+     integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+	</body>
+</html>
